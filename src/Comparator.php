@@ -33,9 +33,9 @@ class Comparator
 				case \Engine\Comparator\Types\Comparators::NOT_IDENTICAL:
 					return $target !== $this->objective;
 				case \Engine\Comparator\Types\Comparators::IN_ARRAY:
-					return in_array($this->objective, $target);
+					return in_array($target, $this->objective);
 				case \Engine\Comparator\Types\Comparators::NOT_IN_ARRAY:
-					return !in_array($this->objective, $target);
+					return !in_array($target, $this->objective);
 			}
 		}
 		catch(\Exception $e)
@@ -46,7 +46,7 @@ class Comparator
 		throw new \LogicException("Comparator {$this->comparator} not recognised");
 	}
 
-	public function setObjective(string $objective) : self
+	public function setObjective($objective) : self
 	{
 		$this->objective = $objective;
 	
