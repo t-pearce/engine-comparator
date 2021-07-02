@@ -12,6 +12,6 @@ abstract class Comparators
 	const LESS_THAN_OR_EQUAL    = "<=";
 	const GREATER_THAN          = ">";
 	const GREATER_THAN_OR_EQUAL = ">=";
-	const IN_ARRAY              = "⊆";
-	const NOT_IN_ARRAY          = "!⊆";
+	const IN_ARRAY              = ":";
+	const NOT_IN_ARRAY          = "!:";
 }

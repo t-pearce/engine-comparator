@@ -33,9 +33,9 @@ class Comparator
 				case \Engine\Comparator\Types\Comparators::NOT_IDENTICAL:
 					return $target !== $this->objective;
 				case \Engine\Comparator\Types\Comparators::IN_ARRAY:
-					return in_array($target, $this->objective);
+					return $this->processContains($target, $this->objective);
 				case \Engine\Comparator\Types\Comparators::NOT_IN_ARRAY:
-					return !in_array($target, $this->objective);
+					return !$this->processContains($target, $this->objective);
 			}
 		}
 		catch(\Exception $e)
@@ -44,6 +44,16 @@ class Comparator
 		}
 
 		throw new \LogicException("Comparator {$this->comparator} not recognised");
+	}
+
+	private function processContains($target, $objective)
+	{
+		if(is_array($target))
+			return in_array($target, $objective);
+		else if(is_string($target))
+			return strpos(strtolower($target), strtolower($objective)) !== false;
+
+		throw new \LogicException("Targets of type " . gettype($target) . " cannot be processed as containing something");
 	}
 
 	public function setObjective($objective) : self
