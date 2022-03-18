@@ -2,16 +2,16 @@
 
 namespace Engine\Comparator\Types;
 
-abstract class Comparators
+enum Comparators : string
 {
-	const EQUAL                 = "==";
-	const NOT_EQUAL             = "!=";
-	const IDENTICAL             = "===";
-	const NOT_IDENTICAL         = "!==";
-	const LESS_THAN             = "<";
-	const LESS_THAN_OR_EQUAL    = "<=";
-	const GREATER_THAN          = ">";
-	const GREATER_THAN_OR_EQUAL = ">=";
-	const IN_ARRAY              = ":";
-	const NOT_IN_ARRAY          = "!:";
+	case EQUAL                 = "==";
+	case NOT_EQUAL             = "!=";
+	case IDENTICAL             = "===";
+	case NOT_IDENTICAL         = "!==";
+	case LESS_THAN             = "<";
+	case LESS_THAN_OR_EQUAL    = "<=";
+	case GREATER_THAN          = ">";
+	case GREATER_THAN_OR_EQUAL = ">=";
+	case IN_ARRAY              = ":";
+	case NOT_IN_ARRAY          = "!:";
 }

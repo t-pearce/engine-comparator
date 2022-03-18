@@ -13,7 +13,6 @@ class Comparator
 	{
 		try
 		{
-			
 			switch($this->comparator)
 			{
 				case \Engine\Comparator\Types\Comparators::EQUAL:
